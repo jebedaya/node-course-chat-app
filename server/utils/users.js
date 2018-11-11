@@ -1,8 +1,8 @@
-[{
-    id: '/wedfgtr54ty34567#',
-    name: 'Yehuda',
-    room: 'The Office Fans'
-}]
+// [{
+//     id: '/wedfgtr54ty34567#',
+//     name: 'Yehuda',
+//     room: 'The Office Fans'
+// }]
 
 // addUser(id, name, room)
 // removeUser(id)
@@ -34,6 +34,13 @@ class Users {
         var namesArray = users.map((user) => user.name);
 
         return namesArray;
+    }
+    getActiveRooms() {
+        var activeRooms = [];
+        if (this.users) {
+            activeRooms = [...new Set(this.users.map((user) => user.room))];;
+        }
+        return activeRooms;
     }
 }
 
